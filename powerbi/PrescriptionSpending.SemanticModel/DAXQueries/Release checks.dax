@@ -1,0 +1,24 @@
+// Run in Power BI Desktop DAX query view after Refresh.
+// These are engine checks to perform in Desktop; they have not been executed in the authoring environment.
+EVALUATE
+VAR All2024 = CALCULATE([Total spending], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024)
+VAR Group2024 = CALCULATE([Total spending], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Drug group] = "GLP-1 / GIP")
+VAR GroupFills2024 = CALCULATE([Prescription fills], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Drug group] = "GLP-1 / GIP")
+VAR Products2024 = [Release products]
+VAR Oz2024 = CALCULATE([Total spending], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Product] = "Ozempic (Semaglutide)")
+VAR OzBridgeResidual = CALCULATE([Bridge residual], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Product] = "Ozempic (Semaglutide)")
+VAR LiraglutideMissing = CALCULATE([Spending YoY], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Product] = "Liraglutide (Liraglutide)")
+VAR WegovyBaseline = CALCULATE([Prior-year fills], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Product] = "Wegovy (Semaglutide)")
+VAR MultiYearGrowth = CALCULATE([Spending YoY], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'))
+RETURN UNION(
+    ROW("Check", "2024 all-product spending", "Actual", All2024, "Expected", 288667842058.40, "Passed", NOT ISBLANK(All2024) && ABS(All2024 - 288667842058.40) < 0.01),
+    ROW("Check", "2024 GLP-1 / GIP spending", "Actual", Group2024, "Expected", 27513350127.66, "Passed", NOT ISBLANK(Group2024) && ABS(Group2024 - 27513350127.66) < 0.01),
+    ROW("Check", "2024 GLP-1 / GIP fills", "Actual", GroupFills2024, "Expected", 21833867, "Passed", GroupFills2024 = 21833867),
+    ROW("Check", "2024 listed products", "Actual", Products2024, "Expected", 3625, "Passed", Products2024 = 3625),
+    ROW("Check", "Ozempic 2024 spending", "Actual", Oz2024, "Expected", 12970296347.00, "Passed", NOT ISBLANK(Oz2024) && ABS(Oz2024 - 12970296347.00) < 0.01),
+    ROW("Check", "Ozempic bridge residual", "Actual", OzBridgeResidual, "Expected", 0, "Passed", NOT ISBLANK(OzBridgeResidual) && ABS(OzBridgeResidual) < 0.01),
+    ROW("Check", "Liraglutide missing baseline stays blank", "Actual", LiraglutideMissing, "Expected", BLANK(), "Passed", ISBLANK(LiraglutideMissing)),
+    ROW("Check", "Wegovy prior-year small baseline", "Actual", WegovyBaseline, "Expected", 142, "Passed", WegovyBaseline = 142),
+    ROW("Check", "Multiple years produce no annual growth", "Actual", MultiYearGrowth, "Expected", BLANK(), "Passed", ISBLANK(MultiYearGrowth))
+)
+ORDER BY [Check]

@@ -1,0 +1,417 @@
+{
+  "name": "PrescriptionSpending",
+  "compatibilityLevel": 1600,
+  "model": {
+    "culture": "en-US",
+    "sourceQueryCulture": "en-US",
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": false
+    },
+    "tables": [
+      {
+        "name": "Drug",
+        "lineageTag": "0c519f2d-c3fe-58bb-88a0-c215794282a0",
+        "columns": [
+          {
+            "name": "DrugKey",
+            "dataType": "int64",
+            "sourceColumn": "DrugKey",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "lineageTag": "b939f5ce-6542-5745-b1e5-90d55bb6bf2b",
+            "formatString": "0",
+            "isKey": true
+          },
+          {
+            "name": "Brand",
+            "dataType": "string",
+            "sourceColumn": "Brand",
+            "summarizeBy": "none",
+            "isHidden": false,
+            "lineageTag": "9458d34f-086c-5b36-ada3-e19d8a21dc50"
+          },
+          {
+            "name": "Ingredient",
+            "dataType": "string",
+            "sourceColumn": "Ingredient",
+            "summarizeBy": "none",
+            "isHidden": false,
+            "lineageTag": "e37e053f-d205-5e55-a8aa-ffb2faae768f"
+          },
+          {
+            "name": "Product",
+            "dataType": "string",
+            "sourceColumn": "Product",
+            "summarizeBy": "none",
+            "isHidden": false,
+            "lineageTag": "a3cc006f-c25e-57e3-9090-6a11f33ea2d7"
+          },
+          {
+            "name": "Drug group",
+            "dataType": "string",
+            "sourceColumn": "Drug group",
+            "summarizeBy": "none",
+            "isHidden": false,
+            "lineageTag": "1ee55d6c-9ccd-53d8-be7b-daa71081fff0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Drug",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"CMS Overall\",",
+                "    Fields = Table.SelectColumns(Source, {\"DrugKey\", \"Brnd_Name\", \"Gnrc_Name\"}),",
+                "    Names = Table.RenameColumns(Fields, {{\"Brnd_Name\", \"Brand\"}, {\"Gnrc_Name\", \"Ingredient\"}}),",
+                "    Product = Table.AddColumn(Names, \"Product\", each [Brand] & \" (\" & [Ingredient] & \")\", type text),",
+                "    Ingredients = {\"semaglutide\", \"tirzepatide\", \"dulaglutide\", \"liraglutide\", \"exenatide\", \"exenatide microspheres\", \"lixisenatide\"},",
+                "    Group = Table.AddColumn(Product, \"Drug group\", each if List.Contains(Ingredients, Text.Lower([Ingredient])) then \"GLP-1 / GIP\" else \"Other listed products\", type text),",
+                "    Typed = Table.TransformColumnTypes(Group, {{\"DrugKey\", Int64.Type}, {\"Brand\", type text}, {\"Ingredient\", type text}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Year",
+        "lineageTag": "4dbbec6a-9f87-5a3f-a849-b1fc6cdb34fb",
+        "columns": [
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "summarizeBy": "none",
+            "isHidden": false,
+            "lineageTag": "1de0a2b4-447a-5cd4-bad5-157584eed13d",
+            "formatString": "0",
+            "isKey": true
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Year",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Table.FromList({2020..2024}, Splitter.SplitByNothing(), {\"Year\"}),",
+                "    Typed = Table.TransformColumnTypes(Source, {{\"Year\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DrugYear",
+        "lineageTag": "f70bdca1-e0e4-55a1-8f92-477a872b1d78",
+        "columns": [
+          {
+            "name": "DrugKey",
+            "dataType": "int64",
+            "sourceColumn": "DrugKey",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "lineageTag": "78e71424-6d86-594c-b916-e1f60e773039",
+            "formatString": "0"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "sourceColumn": "Year",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "lineageTag": "c51fded0-a445-59a8-bef3-7d44b42a4bde",
+            "formatString": "0"
+          },
+          {
+            "name": "SpendingCents",
+            "dataType": "int64",
+            "sourceColumn": "SpendingCents",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "lineageTag": "74f93fc1-edaf-5ccb-8454-8e25c8b773ee",
+            "formatString": "0"
+          },
+          {
+            "name": "Fills",
+            "dataType": "int64",
+            "sourceColumn": "Fills",
+            "summarizeBy": "none",
+            "isHidden": true,
+            "lineageTag": "b312a66e-b49c-576d-9afc-92cef9ac6cb6",
+            "formatString": "0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DrugYear",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"CMS Overall\",",
+                "    ParseNumber = (value as any) as nullable number =>",
+                "        if value = null or Text.Trim(Text.From(value)) = \"\" then null",
+                "        else Number.FromText(Text.From(value), \"en-US\"),",
+                "    Rows = List.Combine(List.Transform(Table.ToRecords(Source), (r as record) =>",
+                "        List.Transform({2020..2024}, (y as number) =>",
+                "            let",
+                "                Spend = ParseNumber(Record.Field(r, \"Tot_Spndng_\" & Text.From(y))),",
+                "                Claims = ParseNumber(Record.Field(r, \"Tot_Clms_\" & Text.From(y)))",
+                "            in [DrugKey = r[DrugKey], Year = y,",
+                "                SpendingCents = if Spend = null then null else Int64.From(Number.Round(Spend * 100, 0, RoundingMode.AwayFromZero)),",
+                "                Fills = Claims]",
+                "        )",
+                "    )),",
+                "    Long = Table.FromRecords(Rows),",
+                "    Available = Table.SelectRows(Long, each [SpendingCents] <> null),",
+                "    Invalid = Table.SelectRows(Available, each [SpendingCents] < 0 or [Fills] = null or [Fills] <= 0 or Number.Mod([Fills], 1) <> 0),",
+                "    Checked = if Table.RowCount(Invalid) > 0 then error \"Invalid spending or prescription-fill denominator.\" else Available,",
+                "    Typed = Table.TransformColumnTypes(Checked, {{\"DrugKey\", Int64.Type}, {\"Year\", Int64.Type}, {\"SpendingCents\", Int64.Type}, {\"Fills\", Int64.Type}}, \"en-US\")",
+                "in",
+                "    Typed"
+              ]
+            }
+          }
+        ],
+        "description": "One published Overall brand/ingredient/year observation. Missing historical spending observations are excluded, never imputed.",
+        "measures": [
+          {
+            "name": "Total spending",
+            "expression": "DIVIDE(SUM('DrugYear'[SpendingCents]), 100)",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "displayFolder": "Spending",
+            "description": "Sum of reported gross spending, converted from integer cents. Keeps current drug and year filters; excludes rebates.",
+            "lineageTag": "e6124ed8-71d7-5852-9566-64dffac67a3d"
+          },
+          {
+            "name": "Prescription fills",
+            "expression": "SUM('DrugYear'[Fills])",
+            "formatString": "#,0",
+            "displayFolder": "Spending",
+            "description": "Original prescriptions and refills in the current filter context. Not unique people or standardized treatment courses.",
+            "lineageTag": "256891bf-95bb-5594-9dc2-39886145481e"
+          },
+          {
+            "name": "Available products",
+            "expression": "DISTINCTCOUNT('DrugYear'[DrugKey])",
+            "formatString": "#,0",
+            "displayFolder": "Spending",
+            "description": "Products with a published spending observation in the current selection. Count the fact-table keys so unavailable years do not inflate the count.",
+            "lineageTag": "ed20548e-18b1-5934-b1cd-6bd0085acd7a"
+          },
+          {
+            "name": "Average spending per fill",
+            "expression": "DIVIDE([Total spending], [Prescription fills])",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "displayFolder": "Spending",
+            "description": "Weighted average: selected total gross dollars divided by selected fills. Do not average product-level averages. Returns blank without a usable denominator.",
+            "lineageTag": "73488877-ffb0-51e1-bead-61324192201b"
+          },
+          {
+            "name": "Share of listed spending",
+            "expression": "DIVIDE([Total spending], CALCULATE([Total spending], REMOVEFILTERS('Drug')))",
+            "formatString": "0.0%",
+            "displayFolder": "Spending",
+            "description": "Selected spending divided by all listed products in the same selected year(s). Clears drug filters only, including group, ingredient, brand and product.",
+            "lineageTag": "20bb974a-0241-5a1a-a53c-b6468a68a6d1"
+          },
+          {
+            "name": "Prior-year spending",
+            "expression": "VAR Y = SELECTEDVALUE('Year'[Year])\nRETURN IF(NOT ISBLANK(Y), CALCULATE([Total spending], REMOVEFILTERS('Year'), 'Year'[Year] = Y - 1))",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "displayFolder": "Growth",
+            "description": "Previous calendar observation year for the same drug selection. Requires one selected year; 2020 has no 2019 baseline in this release.",
+            "lineageTag": "b0cafa3f-4cde-5a2f-b2ee-c25743f758b9"
+          },
+          {
+            "name": "Prior-year fills",
+            "expression": "VAR Y = SELECTEDVALUE('Year'[Year])\nRETURN IF(NOT ISBLANK(Y), CALCULATE([Prescription fills], REMOVEFILTERS('Year'), 'Year'[Year] = Y - 1))",
+            "formatString": "#,0",
+            "displayFolder": "Growth",
+            "description": "Published fills in the previous observation year. Missing history stays blank.",
+            "lineageTag": "6ee742b7-4f96-5390-8499-219e43871324"
+          },
+          {
+            "name": "Prior-year average per fill",
+            "expression": "DIVIDE([Prior-year spending], [Prior-year fills])",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "displayFolder": "Growth",
+            "description": "Prior-year gross dollars divided by prior-year fills within the same drug selection.",
+            "lineageTag": "ba472874-56e0-5bb6-82aa-3e9b3f8dc306"
+          },
+          {
+            "name": "Spending change",
+            "expression": "VAR Current = [Total spending]\nVAR Prior = [Prior-year spending]\nRETURN IF(NOT ISBLANK(Current) && NOT ISBLANK(Prior), Current - Prior)",
+            "formatString": "+$#,0.00;-$#,0.00;$0.00",
+            "displayFolder": "Growth",
+            "description": "Current minus prior spending only when both are observed. Aggregate changes can include changes in product availability.",
+            "lineageTag": "b4466449-f0e7-505f-9333-0ab42367b6a4"
+          },
+          {
+            "name": "Spending YoY",
+            "expression": "DIVIDE([Spending change], [Prior-year spending])",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "Growth",
+            "description": "Reported spending change divided by positive prior-year spending. Blank for missing or zero prior spending, or an ambiguous year selection.",
+            "lineageTag": "de211ae7-c044-5994-acd0-a9851fd59839"
+          },
+          {
+            "name": "Fills YoY",
+            "expression": "VAR Current = [Prescription fills]\nVAR Prior = [Prior-year fills]\nRETURN IF(NOT ISBLANK(Current) && NOT ISBLANK(Prior), DIVIDE(Current - Prior, Prior))",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "Growth",
+            "description": "Change in fill count over the prior year. A small starting count can produce a very large percentage.",
+            "lineageTag": "d02dd226-bd3a-53ac-8f44-6f9f211f6067"
+          },
+          {
+            "name": "Average per fill YoY",
+            "expression": "VAR Current = [Average spending per fill]\nVAR Prior = [Prior-year average per fill]\nRETURN IF(NOT ISBLANK(Current) && NOT ISBLANK(Prior), DIVIDE(Current - Prior, Prior))",
+            "formatString": "+0.0%;-0.0%;0.0%",
+            "displayFolder": "Growth",
+            "description": "Change in average gross spending per fill. Supply and mix affect this measure; it is not a standardized unit-price change.",
+            "lineageTag": "f44f9f57-04a8-5e76-8bcb-bd5d23949d29"
+          },
+          {
+            "name": "Fill-volume component",
+            "expression": "VAR Valid = HASONEVALUE('Drug'[Product]) && HASONEVALUE('Year'[Year]) && NOT ISBLANK([Prior-year spending]) && NOT ISBLANK([Total spending]) && [Prior-year fills] > 0 && [Prescription fills] > 0\nRETURN IF(Valid, ([Prescription fills] - [Prior-year fills]) * [Prior-year average per fill])",
+            "formatString": "+$#,0.00;-$#,0.00;$0.00",
+            "displayFolder": "Bridge",
+            "description": "Volume-first component: (current fills - prior fills) × prior average spend/fill. Requires one product and two observed years. An arithmetic component, not a causal effect.",
+            "lineageTag": "c4a8ba9a-409c-5be9-a9a5-a242342d431b"
+          },
+          {
+            "name": "Average-spend component",
+            "expression": "VAR Valid = HASONEVALUE('Drug'[Product]) && HASONEVALUE('Year'[Year]) && NOT ISBLANK([Prior-year spending]) && NOT ISBLANK([Total spending]) && [Prior-year fills] > 0 && [Prescription fills] > 0\nRETURN IF(Valid, [Prescription fills] * ([Average spending per fill] - [Prior-year average per fill]))",
+            "formatString": "+$#,0.00;-$#,0.00;$0.00",
+            "displayFolder": "Bridge",
+            "description": "Second component: current fills × (current average - prior average). Includes supply and product mix; does not isolate a pure price effect.",
+            "lineageTag": "5d88efa8-0a43-5577-a8f9-c87e9d43060c"
+          },
+          {
+            "name": "Bridge residual",
+            "expression": "VAR Volume = [Fill-volume component]\nVAR Average = [Average-spend component]\nRETURN IF(NOT ISBLANK(Volume) && NOT ISBLANK(Average), Volume + Average - [Spending change])",
+            "formatString": "$0.00;($0.00);$0.00",
+            "displayFolder": "Bridge",
+            "description": "Volume plus average component minus total change. Should be zero to the nearest cent when the bridge is defined.",
+            "lineageTag": "62637808-6f65-5327-9122-93913316faf8"
+          },
+          {
+            "name": "Comparison context",
+            "expression": "VAR Prior = [Prior-year fills]\nRETURN SWITCH(TRUE(), NOT HASONEVALUE('Year'[Year]), \"Select one observation year to calculate annual growth.\", NOT HASONEVALUE('Drug'[Product]), \"Select one product for the spending-change bridge.\", ISBLANK([Prior-year spending]) || ISBLANK([Total spending]), \"Comparison unavailable: both current and prior spending must be observed.\", Prior < 1000, \"Small baseline: \" & FORMAT(Prior, \"#,0\") & \" prior-year fills. Growth percentages are sensitive to that starting point.\", \"Components reconcile before rounding. Average spending reflects supply and mix; the bridge is not a causal price estimate.\")",
+            "displayFolder": "Context",
+            "description": "Visible guidance for missing comparisons, multi-selection, and fewer than 1,000 prior-year fills. The threshold is an explanatory portfolio rule, not a CMS suppression rule.",
+            "lineageTag": "e237bdbc-4e4a-503c-aae9-07fca6449ac0"
+          },
+          {
+            "name": "Spending rank",
+            "expression": "IF(NOT ISBLANK([Total spending]), RANKX(ALLSELECTED('Drug'[Product]), [Total spending], , DESC, DENSE))",
+            "formatString": "0",
+            "displayFolder": "Ranking",
+            "description": "Dense rank within the user-selected drug population. Ties can produce more than ten products in the leading-ten-ranks chart.",
+            "lineageTag": "3fb19d54-fa65-52e5-9426-6779986c4c72"
+          },
+          {
+            "name": "Leading product spending",
+            "expression": "VAR Rank = [Spending rank]\nRETURN IF(NOT ISBLANK(Rank) && Rank <= 10, [Total spending])",
+            "formatString": "$#,0.00;($#,0.00);$0.00",
+            "displayFolder": "Ranking",
+            "description": "Returns spending for the leading ten ranks, preserving slicer selection. Other products return blank.",
+            "lineageTag": "1089e18c-1aa6-51cd-ba98-b03ff3d318f7"
+          },
+          {
+            "name": "Release products",
+            "expression": "CALCULATE([Available products], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024)",
+            "formatString": "#,0",
+            "displayFolder": "Validation",
+            "description": "Count of available products in the 2024 release, independent of report slicers.",
+            "lineageTag": "8e858977-6569-5469-884f-6d3df882b6e2"
+          },
+          {
+            "name": "Release observations",
+            "expression": "CALCULATE(COUNTROWS('DrugYear'), REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'))",
+            "formatString": "#,0",
+            "displayFolder": "Validation",
+            "description": "Count of nonmissing product-year rows across all five years.",
+            "lineageTag": "8b5e1d95-3ecf-552d-b3ad-6752113f4dd9"
+          },
+          {
+            "name": "Release reconciliation",
+            "expression": "VAR AllSpend = CALCULATE([Total spending], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024)\nVAR GroupSpend = CALCULATE([Total spending], REMOVEFILTERS('Drug'), REMOVEFILTERS('Year'), 'Year'[Year] = 2024, 'Drug'[Drug group] = \"GLP-1 / GIP\")\nRETURN IF(ISBLANK(AllSpend), \"Refresh to load the public source\", IF(ABS(AllSpend - 288667842058.40) < 0.01 && ABS(GroupSpend - 27513350127.66) < 0.01 && [Release products] = 3625, \"PASS · 2024 source totals match\", \"REVIEW · source totals differ\"))",
+            "displayFolder": "Validation",
+            "description": "Compares refreshed all-product and selected-group spending and the product count against independent Python/SQL source controls. This is a release-specific check, not a live-market completeness guarantee.",
+            "lineageTag": "7fcc08fc-e164-5052-a3e7-6c8b328b76ea"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "40ebbe70-9306-5631-9525-fc38e44409a0",
+        "fromTable": "DrugYear",
+        "fromColumn": "DrugKey",
+        "toTable": "Drug",
+        "toColumn": "DrugKey",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      },
+      {
+        "name": "4ffdf07c-1103-56c5-a320-150b2b270c26",
+        "fromTable": "DrugYear",
+        "fromColumn": "Year",
+        "toTable": "Year",
+        "toColumn": "Year",
+        "fromCardinality": "many",
+        "toCardinality": "one",
+        "crossFilteringBehavior": "oneDirection",
+        "isActive": true
+      }
+    ],
+    "expressions": [
+      {
+        "name": "CMS Overall",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    // Public aggregate source. The release URL is fixed; this does not fetch a rolling latest release.",
+          "    Source = Csv.Document(",
+          "        Web.Contents(\"https://data.cms.gov\", [RelativePath = \"sites/default/files/2026-06/98218f98-166c-4723-8438-c344a4ef96a6/DSD_PTD_RY26_P04_V10_DY24_BGM.csv\"]),",
+          "        [Delimiter = \",\", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]",
+          "    ),",
+          "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),",
+          "    Overall = Table.SelectRows(Headers, each [Mftr_Name] = \"Overall\"),",
+          "    UniqueCount = Table.RowCount(Table.Distinct(Overall, {\"Brnd_Name\", \"Gnrc_Name\"})),",
+          "    Checked = if UniqueCount <> Table.RowCount(Overall) then error \"Duplicate Overall brand/ingredient keys in source.\" else Overall,",
+          "    Sorted = Table.Sort(Checked, {{\"Brnd_Name\", Order.Ascending}, {\"Gnrc_Name\", Order.Ascending}}),",
+          "    Indexed = Table.AddIndexColumn(Sorted, \"DrugKey\", 1, 1, Int64.Type)",
+          "in",
+          "    Indexed"
+        ],
+        "description": "Pinned June 2026 CMS release, Overall rows only. Public web source; anonymous access."
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"CMS Overall\", \"Drug\", \"Year\", \"DrugYear\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "source_sha256": "5dcc9d7bd7d7f88d9f6b24485c06d961ed6d70f9aa6deffa50dd47a6854c2a55",
+  "release_date": "2026-06-25",
+  "source_rows": 14536,
+  "overall_products": 3625,
+  "available_drug_years": 16192,
+  "annual_controls": [
+    {
+      "year": 2020,
+      "cohort": "all",
+      "available_products": 2887,
+      "spending_cents": 19409203833914,
+      "prescription_fills": 1454422165
+    },
+    {
+      "year": 2020,
+      "cohort": "incretin",
+      "available_products": 7,
+      "spending_cents": 702325889367,
+      "prescription_fills": 5822125
+    },
+    {
+      "year": 2021,
+      "cohort": "all",
+      "available_products": 3054,
+      "spending_cents": 21351334936093,
+      "prescription_fills": 1483268229
+    },
+    {
+      "year": 2021,
+      "cohort": "incretin",
+      "available_products": 7,
+      "spending_cents": 995285556517,
+      "prescription_fills": 7667603
+    },
+    {
+      "year": 2022,
+      "cohort": "all",
+      "available_products": 3221,
+      "spending_cents": 23977921568948,
+      "prescription_fills": 1539211134
+    },
+    {
+      "year": 2022,
+      "cohort": "incretin",
+      "available_products": 8,
+      "spending_cents": 1391276203427,
+      "prescription_fills": 10158264
+    },
+    {
+      "year": 2023,
+      "cohort": "all",
+      "available_products": 3405,
+      "spending_cents": 27580891875270,
+      "prescription_fills": 1616688565
+    },
+    {
+      "year": 2023,
+      "cohort": "incretin",
+      "available_products": 9,
+      "spending_cents": 2221194662922,
+      "prescription_fills": 16235172
+    },
+    {
+      "year": 2024,
+      "cohort": "all",
+      "available_products": 3625,
+      "spending_cents": 28866784205840,
+      "prescription_fills": 1711657015
+    },
+    {
+      "year": 2024,
+      "cohort": "incretin",
+      "available_products": 11,
+      "spending_cents": 2751335012766,
+      "prescription_fills": 21833867
+    }
+  ],
+  "special_cases": {
+    "liraglutide_2023_spending": "unavailable",
+    "wegovy_2023_fills": 142
+  },
+  "validation_scope": "Direct source controls and agreement with the existing Python/SQL outputs. Power Query and DAX execution still require Power BI Desktop."
+}

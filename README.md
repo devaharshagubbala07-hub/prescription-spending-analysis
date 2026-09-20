@@ -23,6 +23,10 @@ The [source manifest](source.json) records the download, documentation, release 
 - An interactive dashboard with group/year filters, individual-drug histories, and CSV export.
 - Seven analytical tests, six reconciliation checks, and a source-grounded interpretation.
 
+## Power BI companion
+
+A [three-page native Power BI project](powerbi/README.md) adds a documented drug/year model, DAX measures, and source-control queries. The project files are prepared and schema-checked; **Desktop refresh, DAX execution, and rendering remain to be verified**. Open `powerbi/PrescriptionSpending.pbip` and follow the included setup steps.
+
 ## Run it
 
 Python 3.11 or newer; standard library only.
