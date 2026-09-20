@@ -22,7 +22,7 @@
     $('average').textContent=money(current.average_spend_per_claim);$('share').textContent=pct(100*current.spend_cents/all.spend_cents);
     const maximum=Math.max(...history.map(x=>x.spend_cents));
     $('trend').replaceChildren(...history.map(x=>bar(String(x.year)+(x.year===year?' · selected':''),compactMoney(x.spend_cents/100),100*x.spend_cents/maximum,`${integer(x.products)} available products · ${integer(x.claims)} fills`)));
-    $('concentration').textContent=`Top ${current.top_products.length} products = ${pct(current.top10_share_pct)} of selected spending`;
+    $('concentration').textContent=`Top ${current.top_products.length} products = ${current.top10_share_pct<100&&current.top10_share_pct>=99.95?'>99.9%':pct(current.top10_share_pct)} of selected spending`;
     $('leaders').replaceChildren(...current.top_products.slice(0,5).map(x=>bar(x.brand,compactMoney(x.spend_cents/100),100*x.spend_cents/current.spend_cents,`${pct(100*x.spend_cents/current.spend_cents)} of selected spending`)));
     $('product-caption').textContent=`Highest-spending ${current.top_products.length} of ${integer(current.products)} available products · ${year}. The flag concerns CMS's weighted unit-spend measure.`;
     $('products').replaceChildren(...current.top_products.map(r=>{
@@ -38,10 +38,12 @@
     $('bridge').replaceChildren();
     if(!s.bridge){$('bridge-note').textContent='A comparable 2023 baseline is unavailable. No growth rate or decomposition is imputed.';return;}
     const b=s.bridge;
+    const baseline=s.history.find(r=>r.year===2023);
+    const smallBaseline=baseline&&baseline.claims<1000?` Small baseline: ${integer(baseline.claims)} fills in 2023; percentage changes are sensitive to this starting point.`:'';
     for(const [label,value] of [['Change in fills, at 2023 average',b.claims_component],['Change in average, at 2024 volume',b.average_spend_component],['Total spending change',b.change]]){
       const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=(value>0?'+':'')+compactMoney(value);if(value<0)dd.className='negative';$('bridge').append(dt,dd);
     }
-    $('bridge-note').textContent=`Fills changed ${pct(b.claims_growth_pct)}; average spending per fill changed ${pct(b.average_spend_growth_pct)}. Components reconcile before display rounding. Average spending is affected by supply and mix; it is not a pure price effect or a causal estimate.`;
+    $('bridge-note').textContent=`Fills changed ${pct(b.claims_growth_pct)}; average spending per fill changed ${pct(b.average_spend_growth_pct)}. Components reconcile before display rounding. Average spending is affected by supply and mix; it is not a pure price effect or a causal estimate.${smallBaseline}`;
   }
   function download(){
     const fields=['data_kind','release_date','year','cohort','brand','generic','spend_usd','claims','average_spend_per_claim','unit_outlier'];
