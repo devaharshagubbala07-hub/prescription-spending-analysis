@@ -1,0 +1,13 @@
+{
+  "publisher": "Centers for Medicare & Medicaid Services",
+  "title": "Medicare Part D Spending by Drug",
+  "release_date": "2026-06-25",
+  "retrieved_date": "2026-09-20",
+  "observation_years": [2020, 2021, 2022, 2023, 2024],
+  "download_url": "https://data.cms.gov/sites/default/files/2026-06/98218f98-166c-4723-8438-c344a4ef96a6/DSD_PTD_RY26_P04_V10_DY24_BGM.csv",
+  "landing_page": "https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/medicare-part-d-spending-by-drug",
+  "methodology_url": "https://data.cms.gov/sites/default/files/2026-06/d7e0a571-9d08-40ec-8278-1b2300f59424/DSD_PTD_RY26_20260603_Methodology_WDDSE_508.pdf",
+  "dictionary_url": "https://data.cms.gov/sites/default/files/2026-06/Medicare%20Part%20D%20Spending%20by%20Drug%20Data%20Dictionary%2020260603_508.pdf",
+  "sha256": "5dcc9d7bd7d7f88d9f6b24485c06d961ed6d70f9aa6deffa50dd47a6854c2a55",
+  "license": "https://www.usa.gov/government-works"
+}

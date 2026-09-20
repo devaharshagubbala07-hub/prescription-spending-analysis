@@ -1,0 +1,1572 @@
+{
+  "data_kind": "public_cms",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "title": "Medicare Part D Spending by Drug",
+    "release_date": "2026-06-25",
+    "retrieved_date": "2026-09-20",
+    "observation_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "download_url": "https://data.cms.gov/sites/default/files/2026-06/98218f98-166c-4723-8438-c344a4ef96a6/DSD_PTD_RY26_P04_V10_DY24_BGM.csv",
+    "landing_page": "https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/medicare-part-d-spending-by-drug",
+    "methodology_url": "https://data.cms.gov/sites/default/files/2026-06/d7e0a571-9d08-40ec-8278-1b2300f59424/DSD_PTD_RY26_20260603_Methodology_WDDSE_508.pdf",
+    "dictionary_url": "https://data.cms.gov/sites/default/files/2026-06/Medicare%20Part%20D%20Spending%20by%20Drug%20Data%20Dictionary%2020260603_508.pdf",
+    "sha256": "5dcc9d7bd7d7f88d9f6b24485c06d961ed6d70f9aa6deffa50dd47a6854c2a55",
+    "license": "https://www.usa.gov/government-works"
+  },
+  "cohorts": {
+    "all": [
+      {
+        "year": 2020,
+        "products": 2887,
+        "spend_cents": 19409203833914,
+        "claims": 1454422165,
+        "unit_outlier_products": 197,
+        "top_products": [
+          {
+            "brand": "Eliquis",
+            "generic": "Apixaban",
+            "spend_cents": 993606981380,
+            "claims": 14847081,
+            "beneficiaries": 2641941,
+            "weighted_unit_spend": 7.8975887451,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Revlimid",
+            "generic": "Lenalidomide",
+            "spend_cents": 535605027460,
+            "claims": 329864,
+            "beneficiaries": 43747,
+            "weighted_unit_spend": 794.32802648,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Xarelto",
+            "generic": "Rivaroxaban",
+            "spend_cents": 470131480500,
+            "claims": 6491930,
+            "beneficiaries": 1184718,
+            "weighted_unit_spend": 15.450049371,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Januvia",
+            "generic": "Sitagliptin Phosphate",
+            "spend_cents": 386508777250,
+            "claims": 4664181,
+            "beneficiaries": 934686,
+            "weighted_unit_spend": 15.805910242,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 328487306190,
+            "claims": 2823185,
+            "beneficiaries": 497327,
+            "weighted_unit_spend": 400.68233332,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Imbruvica",
+            "generic": "Ibrutinib",
+            "spend_cents": 296290930360,
+            "claims": 232858,
+            "beneficiaries": 26847,
+            "weighted_unit_spend": 392.65815448,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Lantus Solostar",
+            "generic": "Insulin Glargine,Hum.Rec.Anlog",
+            "spend_cents": 266336023180,
+            "claims": 4583923,
+            "beneficiaries": 1002500,
+            "weighted_unit_spend": 28.401562112,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Jardiance",
+            "generic": "Empagliflozin",
+            "spend_cents": 237616629250,
+            "claims": 2677192,
+            "beneficiaries": 594859,
+            "weighted_unit_spend": 17.441889267,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Humira(Cf) Pen",
+            "generic": "Adalimumab",
+            "spend_cents": 216943042410,
+            "claims": 299290,
+            "beneficiaries": 42406,
+            "weighted_unit_spend": 2832.1316773,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ibrance",
+            "generic": "Palbociclib",
+            "spend_cents": 210893718830,
+            "claims": 165133,
+            "beneficiaries": 21394,
+            "weighted_unit_spend": 613.20289639,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 20.312115584676118,
+        "average_spend_per_claim": 133.44958775373175
+      },
+      {
+        "year": 2021,
+        "products": 3054,
+        "spend_cents": 21351334936093,
+        "claims": 1483268229,
+        "unit_outlier_products": 219,
+        "top_products": [
+          {
+            "brand": "Eliquis",
+            "generic": "Apixaban",
+            "spend_cents": 1257514585200,
+            "claims": 17015798,
+            "beneficiaries": 3125087,
+            "weighted_unit_spend": 8.5084511016,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Revlimid",
+            "generic": "Lenalidomide",
+            "spend_cents": 589354768900,
+            "claims": 344297,
+            "beneficiaries": 45601,
+            "weighted_unit_spend": 840.17444432,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Xarelto",
+            "generic": "Rivaroxaban",
+            "spend_cents": 522554777190,
+            "claims": 6458283,
+            "beneficiaries": 1258010,
+            "weighted_unit_spend": 16.398856338,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 470217472360,
+            "claims": 3704201,
+            "beneficiaries": 663858,
+            "weighted_unit_spend": 432.42763561,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Januvia",
+            "generic": "Sitagliptin Phosphate",
+            "spend_cents": 405953411200,
+            "claims": 4507803,
+            "beneficiaries": 934542,
+            "weighted_unit_spend": 16.859649275,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Jardiance",
+            "generic": "Empagliflozin",
+            "spend_cents": 373577356020,
+            "claims": 3824726,
+            "beneficiaries": 884516,
+            "weighted_unit_spend": 18.613648578,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Imbruvica",
+            "generic": "Ibrutinib",
+            "spend_cents": 315022580960,
+            "claims": 230990,
+            "beneficiaries": 26044,
+            "weighted_unit_spend": 426.87978858,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Humira(Cf) Pen",
+            "generic": "Adalimumab",
+            "spend_cents": 290733247830,
+            "claims": 374868,
+            "beneficiaries": 51229,
+            "weighted_unit_spend": 3093.2777754,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Lantus Solostar",
+            "generic": "Insulin Glargine,Hum.Rec.Anlog",
+            "spend_cents": 283144726140,
+            "claims": 4633350,
+            "beneficiaries": 1054611,
+            "weighted_unit_spend": 28.805989689,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 262169434830,
+            "claims": 2016177,
+            "beneficiaries": 458643,
+            "weighted_unit_spend": 452.72044757,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 22.34165861248434,
+        "average_spend_per_claim": 143.9479017931085
+      },
+      {
+        "year": 2022,
+        "products": 3221,
+        "spend_cents": 23977921568948,
+        "claims": 1539211134,
+        "unit_outlier_products": 253,
+        "top_products": [
+          {
+            "brand": "Eliquis",
+            "generic": "Apixaban",
+            "spend_cents": 1521981229400,
+            "claims": 18973041,
+            "beneficiaries": 3505142,
+            "weighted_unit_spend": 9.1171846791,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 622529166760,
+            "claims": 4610823,
+            "beneficiaries": 840163,
+            "weighted_unit_spend": 459.0083713,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Revlimid",
+            "generic": "Lenalidomide",
+            "spend_cents": 593505109240,
+            "claims": 329329,
+            "beneficiaries": 45557,
+            "weighted_unit_spend": 883.09617744,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Jardiance",
+            "generic": "Empagliflozin",
+            "spend_cents": 585172078200,
+            "claims": 5653254,
+            "beneficiaries": 1321067,
+            "weighted_unit_spend": 19.509144336,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Xarelto",
+            "generic": "Rivaroxaban",
+            "spend_cents": 577268254790,
+            "claims": 6524784,
+            "beneficiaries": 1311333,
+            "weighted_unit_spend": 17.263298038,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 462816064340,
+            "claims": 3410839,
+            "beneficiaries": 780253,
+            "weighted_unit_spend": 468.24204575,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Januvia",
+            "generic": "Sitagliptin Phosphate",
+            "spend_cents": 409799736490,
+            "claims": 4242641,
+            "beneficiaries": 884825,
+            "weighted_unit_spend": 17.939452193,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Humira(Cf) Pen",
+            "generic": "Adalimumab",
+            "spend_cents": 369400060250,
+            "claims": 438263,
+            "beneficiaries": 57418,
+            "weighted_unit_spend": 3391.7408903,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trelegy Ellipta",
+            "generic": "Fluticasone/Umeclidin/Vilanter",
+            "spend_cents": 334011032640,
+            "claims": 3926585,
+            "beneficiaries": 834046,
+            "weighted_unit_spend": 10.773613712,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Lantus Solostar",
+            "generic": "Insulin Glargine,Hum.Rec.Anlog",
+            "spend_cents": 287365862950,
+            "claims": 4590568,
+            "beneficiaries": 1072434,
+            "weighted_unit_spend": 29.172951963,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 24.03814933869967,
+        "average_spend_per_claim": 155.780588116172
+      },
+      {
+        "year": 2023,
+        "products": 3405,
+        "spend_cents": 27580891875270,
+        "claims": 1616688565,
+        "unit_outlier_products": 282,
+        "top_products": [
+          {
+            "brand": "Eliquis",
+            "generic": "Apixaban",
+            "spend_cents": 1827345196700,
+            "claims": 21195452,
+            "beneficiaries": 3927848,
+            "weighted_unit_spend": 9.7446967132,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 919404843510,
+            "claims": 6927972,
+            "beneficiaries": 1464468,
+            "weighted_unit_spend": 355.90270351,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Jardiance",
+            "generic": "Empagliflozin",
+            "spend_cents": 883993506330,
+            "claims": 8153238,
+            "beneficiaries": 1882768,
+            "weighted_unit_spend": 20.317966064,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 736385622430,
+            "claims": 5316020,
+            "beneficiaries": 938731,
+            "weighted_unit_spend": 483.20525328,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Xarelto",
+            "generic": "Rivaroxaban",
+            "spend_cents": 630924682260,
+            "claims": 6654162,
+            "beneficiaries": 1324165,
+            "weighted_unit_spend": 18.225776573,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trelegy Ellipta",
+            "generic": "Fluticasone/Umeclidin/Vilanter",
+            "spend_cents": 445588400970,
+            "claims": 5009961,
+            "beneficiaries": 1050583,
+            "weighted_unit_spend": 11.179466384,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Humira(Cf) Pen",
+            "generic": "Adalimumab",
+            "spend_cents": 441982818830,
+            "claims": 478808,
+            "beneficiaries": 61474,
+            "weighted_unit_spend": 3750.063537,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Farxiga",
+            "generic": "Dapagliflozin Propanediol",
+            "spend_cents": 434218230730,
+            "claims": 4298827,
+            "beneficiaries": 993909,
+            "weighted_unit_spend": 19.547871688,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Januvia",
+            "generic": "Sitagliptin Phosphate",
+            "spend_cents": 409083682070,
+            "claims": 4029094,
+            "beneficiaries": 843391,
+            "weighted_unit_spend": 18.88030265,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Revlimid",
+            "generic": "Lenalidomide",
+            "spend_cents": 385980478860,
+            "claims": 216207,
+            "beneficiaries": 36967,
+            "weighted_unit_spend": 878.21219633,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 25.796509753440848,
+        "average_spend_per_claim": 170.60114404452412
+      },
+      {
+        "year": 2024,
+        "products": 3625,
+        "spend_cents": 28866784205840,
+        "claims": 1711657015,
+        "unit_outlier_products": 395,
+        "top_products": [
+          {
+            "brand": "Eliquis",
+            "generic": "Apixaban",
+            "spend_cents": 2077492922500,
+            "claims": 24061332,
+            "beneficiaries": 4424796,
+            "weighted_unit_spend": 9.6370356894,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 1297029634700,
+            "claims": 10417182,
+            "beneficiaries": 1952637,
+            "weighted_unit_spend": 306.47791837,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Jardiance",
+            "generic": "Empagliflozin",
+            "spend_cents": 1143599742100,
+            "claims": 11368280,
+            "beneficiaries": 2543331,
+            "weighted_unit_spend": 18.937748413,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Mounjaro",
+            "generic": "Tirzepatide",
+            "spend_cents": 633694264070,
+            "claims": 5105397,
+            "beneficiaries": 894581,
+            "weighted_unit_spend": 511.63410588,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Xarelto",
+            "generic": "Rivaroxaban",
+            "spend_cents": 623223183970,
+            "claims": 6660246,
+            "beneficiaries": 1321019,
+            "weighted_unit_spend": 17.677331878,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 545413472510,
+            "claims": 4305141,
+            "beneficiaries": 788716,
+            "weighted_unit_spend": 467.74913984,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trelegy Ellipta",
+            "generic": "Fluticasone/Umeclidin/Vilanter",
+            "spend_cents": 529440177680,
+            "claims": 6250872,
+            "beneficiaries": 1268914,
+            "weighted_unit_spend": 10.518825318,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Farxiga",
+            "generic": "Dapagliflozin Propanediol",
+            "spend_cents": 529054896340,
+            "claims": 5634650,
+            "beneficiaries": 1269216,
+            "weighted_unit_spend": 18.314120983,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Humira(Cf) Pen",
+            "generic": "Adalimumab",
+            "spend_cents": 432869886420,
+            "claims": 490303,
+            "beneficiaries": 63768,
+            "weighted_unit_spend": 3531.4236112,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Revlimid",
+            "generic": "Lenalidomide",
+            "spend_cents": 417951148630,
+            "claims": 239843,
+            "beneficiaries": 38868,
+            "weighted_unit_spend": 854.82283632,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 28.509477433426916,
+        "average_spend_per_claim": 168.64818098992808
+      }
+    ],
+    "incretin": [
+      {
+        "year": 2020,
+        "products": 7,
+        "spend_cents": 702325889367,
+        "claims": 5822125,
+        "unit_outlier_products": 0,
+        "top_products": [
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 328487306190,
+            "claims": 2823185,
+            "beneficiaries": 497327,
+            "weighted_unit_spend": 400.68233332,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 3-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 154581541480,
+            "claims": 1040550,
+            "beneficiaries": 224779,
+            "weighted_unit_spend": 107.76552488,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 145581226710,
+            "claims": 1204138,
+            "beneficiaries": 269663,
+            "weighted_unit_spend": 433.66625915,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 2-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 34947615875,
+            "claims": 400626,
+            "beneficiaries": 101652,
+            "weighted_unit_spend": 109.14978347,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Bydureon Bcise",
+            "generic": "Exenatide Microspheres",
+            "spend_cents": 26616095099,
+            "claims": 245742,
+            "beneficiaries": 49690,
+            "weighted_unit_spend": 214.28813616,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Rybelsus",
+            "generic": "Semaglutide",
+            "spend_cents": 7344440861,
+            "claims": 68091,
+            "beneficiaries": 27825,
+            "weighted_unit_spend": 27.042868521,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Byetta",
+            "generic": "Exenatide",
+            "spend_cents": 4767663152,
+            "claims": 39793,
+            "beneficiaries": 8494,
+            "weighted_unit_spend": 379.70840015,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 100.0,
+        "average_spend_per_claim": 1206.3050679382527
+      },
+      {
+        "year": 2021,
+        "products": 7,
+        "spend_cents": 995285556517,
+        "claims": 7667603,
+        "unit_outlier_products": 0,
+        "top_products": [
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 470217472360,
+            "claims": 3704201,
+            "beneficiaries": 663858,
+            "weighted_unit_spend": 432.42763561,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 262169434830,
+            "claims": 2016177,
+            "beneficiaries": 458643,
+            "weighted_unit_spend": 452.72044757,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 3-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 142229258310,
+            "claims": 884941,
+            "beneficiaries": 200512,
+            "weighted_unit_spend": 114.76558522,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Rybelsus",
+            "generic": "Semaglutide",
+            "spend_cents": 45456382329,
+            "claims": 367858,
+            "beneficiaries": 108224,
+            "weighted_unit_spend": 28.728823713,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Bydureon Bcise",
+            "generic": "Exenatide Microspheres",
+            "spend_cents": 37924346702,
+            "claims": 316214,
+            "beneficiaries": 66313,
+            "weighted_unit_spend": 227.38926589,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 2-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 33489795737,
+            "claims": 349866,
+            "beneficiaries": 91602,
+            "weighted_unit_spend": 115.93722782,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Byetta",
+            "generic": "Exenatide",
+            "spend_cents": 3798866249,
+            "claims": 28346,
+            "beneficiaries": 6282,
+            "weighted_unit_spend": 409.55066128,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 100.0,
+        "average_spend_per_claim": 1298.0400217864697
+      },
+      {
+        "year": 2022,
+        "products": 8,
+        "spend_cents": 1391276203427,
+        "claims": 10158264,
+        "unit_outlier_products": 0,
+        "top_products": [
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 622529166760,
+            "claims": 4610823,
+            "beneficiaries": 840163,
+            "weighted_unit_spend": 459.0083713,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 462816064340,
+            "claims": 3410839,
+            "beneficiaries": 780253,
+            "weighted_unit_spend": 468.24204575,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 3-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 123859487240,
+            "claims": 724049,
+            "beneficiaries": 167181,
+            "weighted_unit_spend": 121.5396526,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Rybelsus",
+            "generic": "Semaglutide",
+            "spend_cents": 97489447013,
+            "claims": 686346,
+            "beneficiaries": 184615,
+            "weighted_unit_spend": 30.853757195,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Bydureon Bcise",
+            "generic": "Exenatide Microspheres",
+            "spend_cents": 35507875797,
+            "claims": 277165,
+            "beneficiaries": 54563,
+            "weighted_unit_spend": 236.80895415,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 2-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 31920550929,
+            "claims": 308357,
+            "beneficiaries": 82777,
+            "weighted_unit_spend": 122.14309731,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Mounjaro",
+            "generic": "Tirzepatide",
+            "spend_cents": 14403515232,
+            "claims": 121095,
+            "beneficiaries": 54202,
+            "weighted_unit_spend": 514.4236735,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Byetta",
+            "generic": "Exenatide",
+            "spend_cents": 2750096116,
+            "claims": 19590,
+            "beneficiaries": 4685,
+            "weighted_unit_spend": 422.16832115,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 100.0,
+        "average_spend_per_claim": 1369.6003602849858
+      },
+      {
+        "year": 2023,
+        "products": 9,
+        "spend_cents": 2221194662922,
+        "claims": 16235172,
+        "unit_outlier_products": 1,
+        "top_products": [
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 919404843510,
+            "claims": 6927972,
+            "beneficiaries": 1464468,
+            "weighted_unit_spend": 355.90270351,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 736385622430,
+            "claims": 5316020,
+            "beneficiaries": 938731,
+            "weighted_unit_spend": 483.20525328,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Mounjaro",
+            "generic": "Tirzepatide",
+            "spend_cents": 236138415710,
+            "claims": 1821486,
+            "beneficiaries": 370203,
+            "weighted_unit_spend": 539.81748741,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Rybelsus",
+            "generic": "Semaglutide",
+            "spend_cents": 166590694330,
+            "claims": 1075026,
+            "beneficiaries": 285693,
+            "weighted_unit_spend": 32.413538758,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 3-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 100463514520,
+            "claims": 574218,
+            "beneficiaries": 142213,
+            "weighted_unit_spend": 126.95461794,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 2-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 31721356547,
+            "claims": 293462,
+            "beneficiaries": 83777,
+            "weighted_unit_spend": 126.64461904,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Bydureon Bcise",
+            "generic": "Exenatide Microspheres",
+            "spend_cents": 28405675899,
+            "claims": 212804,
+            "beneficiaries": 45857,
+            "weighted_unit_spend": 244.14682255,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Byetta",
+            "generic": "Exenatide",
+            "spend_cents": 2064562617,
+            "claims": 14042,
+            "beneficiaries": 3396,
+            "weighted_unit_spend": 442.1503929,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Wegovy",
+            "generic": "Semaglutide",
+            "spend_cents": 19977359,
+            "claims": 142,
+            "beneficiaries": 47,
+            "weighted_unit_spend": 496.25109967,
+            "unit_outlier": 1
+          }
+        ],
+        "top10_share_pct": 100.0,
+        "average_spend_per_claim": 1368.1374382248614
+      },
+      {
+        "year": 2024,
+        "products": 11,
+        "spend_cents": 2751335012766,
+        "claims": 21833867,
+        "unit_outlier_products": 0,
+        "top_products": [
+          {
+            "brand": "Ozempic",
+            "generic": "Semaglutide",
+            "spend_cents": 1297029634700,
+            "claims": 10417182,
+            "beneficiaries": 1952637,
+            "weighted_unit_spend": 306.47791837,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Mounjaro",
+            "generic": "Tirzepatide",
+            "spend_cents": 633694264070,
+            "claims": 5105397,
+            "beneficiaries": 894581,
+            "weighted_unit_spend": 511.63410588,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Trulicity",
+            "generic": "Dulaglutide",
+            "spend_cents": 545413472510,
+            "claims": 4305141,
+            "beneficiaries": 788716,
+            "weighted_unit_spend": 467.74913984,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Rybelsus",
+            "generic": "Semaglutide",
+            "spend_cents": 189008202600,
+            "claims": 1251733,
+            "beneficiaries": 309993,
+            "weighted_unit_spend": 30.593366014,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Wegovy",
+            "generic": "Semaglutide",
+            "spend_cents": 30128329140,
+            "claims": 211575,
+            "beneficiaries": 52961,
+            "weighted_unit_spend": 602.08996153,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Bydureon Bcise",
+            "generic": "Exenatide Microspheres",
+            "spend_cents": 21535467845,
+            "claims": 178931,
+            "beneficiaries": 38059,
+            "weighted_unit_spend": 232.77593179,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 3-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 20306305037,
+            "claims": 181068,
+            "beneficiaries": 62754,
+            "weighted_unit_spend": 86.206557743,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Victoza 2-Pak",
+            "generic": "Liraglutide",
+            "spend_cents": 7783272114,
+            "claims": 108521,
+            "beneficiaries": 41126,
+            "weighted_unit_spend": 91.446444828,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Liraglutide",
+            "generic": "Liraglutide",
+            "spend_cents": 4809582439,
+            "claims": 62254,
+            "beneficiaries": 24405,
+            "weighted_unit_spend": 75.154881194,
+            "unit_outlier": 0
+          },
+          {
+            "brand": "Byetta",
+            "generic": "Exenatide",
+            "spend_cents": 1587747966,
+            "claims": 11712,
+            "beneficiaries": 3043,
+            "weighted_unit_spend": 459.81904087,
+            "unit_outlier": 0
+          }
+        ],
+        "top10_share_pct": 99.99859216181162,
+        "average_spend_per_claim": 1260.1226401012702
+      }
+    ]
+  },
+  "stories": [
+    {
+      "brand": "Bydureon Bcise",
+      "generic": "Exenatide Microspheres",
+      "history": [
+        {
+          "brand": "Bydureon Bcise",
+          "generic": "Exenatide Microspheres",
+          "year": 2020,
+          "spend_cents": 26616095099,
+          "claims": 245742,
+          "beneficiaries": 49690,
+          "weighted_unit_spend": 214.28813616,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Bydureon Bcise",
+          "generic": "Exenatide Microspheres",
+          "year": 2021,
+          "spend_cents": 37924346702,
+          "claims": 316214,
+          "beneficiaries": 66313,
+          "weighted_unit_spend": 227.38926589,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Bydureon Bcise",
+          "generic": "Exenatide Microspheres",
+          "year": 2022,
+          "spend_cents": 35507875797,
+          "claims": 277165,
+          "beneficiaries": 54563,
+          "weighted_unit_spend": 236.80895415,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Bydureon Bcise",
+          "generic": "Exenatide Microspheres",
+          "year": 2023,
+          "spend_cents": 28405675899,
+          "claims": 212804,
+          "beneficiaries": 45857,
+          "weighted_unit_spend": 244.14682255,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Bydureon Bcise",
+          "generic": "Exenatide Microspheres",
+          "year": 2024,
+          "spend_cents": 21535467845,
+          "claims": 178931,
+          "beneficiaries": 38059,
+          "weighted_unit_spend": 232.77593179,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": -68702080.54,
+        "claims_component": -45214632.23091798,
+        "average_spend_component": -23487448.30908202,
+        "claims_growth_pct": -15.91746395744441,
+        "average_spend_growth_pct": -9.8338800729126
+      }
+    },
+    {
+      "brand": "Byetta",
+      "generic": "Exenatide",
+      "history": [
+        {
+          "brand": "Byetta",
+          "generic": "Exenatide",
+          "year": 2020,
+          "spend_cents": 4767663152,
+          "claims": 39793,
+          "beneficiaries": 8494,
+          "weighted_unit_spend": 379.70840015,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Byetta",
+          "generic": "Exenatide",
+          "year": 2021,
+          "spend_cents": 3798866249,
+          "claims": 28346,
+          "beneficiaries": 6282,
+          "weighted_unit_spend": 409.55066128,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Byetta",
+          "generic": "Exenatide",
+          "year": 2022,
+          "spend_cents": 2750096116,
+          "claims": 19590,
+          "beneficiaries": 4685,
+          "weighted_unit_spend": 422.16832115,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Byetta",
+          "generic": "Exenatide",
+          "year": 2023,
+          "spend_cents": 2064562617,
+          "claims": 14042,
+          "beneficiaries": 3396,
+          "weighted_unit_spend": 442.1503929,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Byetta",
+          "generic": "Exenatide",
+          "year": 2024,
+          "spend_cents": 1587747966,
+          "claims": 11712,
+          "beneficiaries": 3043,
+          "weighted_unit_spend": 459.81904087,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": -4768146.51,
+        "claims_component": -3425744.8352157813,
+        "average_spend_component": -1342401.6747842187,
+        "claims_growth_pct": -16.593077909129754,
+        "average_spend_growth_pct": -7.795649973920336
+      }
+    },
+    {
+      "brand": "Liraglutide",
+      "generic": "Liraglutide",
+      "history": [
+        {
+          "brand": "Liraglutide",
+          "generic": "Liraglutide",
+          "year": 2024,
+          "spend_cents": 4809582439,
+          "claims": 62254,
+          "beneficiaries": 24405,
+          "weighted_unit_spend": 75.154881194,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": null
+    },
+    {
+      "brand": "Mounjaro",
+      "generic": "Tirzepatide",
+      "history": [
+        {
+          "brand": "Mounjaro",
+          "generic": "Tirzepatide",
+          "year": 2022,
+          "spend_cents": 14403515232,
+          "claims": 121095,
+          "beneficiaries": 54202,
+          "weighted_unit_spend": 514.4236735,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Mounjaro",
+          "generic": "Tirzepatide",
+          "year": 2023,
+          "spend_cents": 236138415710,
+          "claims": 1821486,
+          "beneficiaries": 370203,
+          "weighted_unit_spend": 539.81748741,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Mounjaro",
+          "generic": "Tirzepatide",
+          "year": 2024,
+          "spend_cents": 633694264070,
+          "claims": 5105397,
+          "beneficiaries": 894581,
+          "weighted_unit_spend": 511.63410588,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": 3975558483.6,
+        "claims_component": 4257279720.363713,
+        "average_spend_component": -281721236.763713,
+        "claims_growth_pct": 180.2874685833435,
+        "average_spend_growth_pct": -4.256466893914383
+      }
+    },
+    {
+      "brand": "Ozempic",
+      "generic": "Semaglutide",
+      "history": [
+        {
+          "brand": "Ozempic",
+          "generic": "Semaglutide",
+          "year": 2020,
+          "spend_cents": 145581226710,
+          "claims": 1204138,
+          "beneficiaries": 269663,
+          "weighted_unit_spend": 433.66625915,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Ozempic",
+          "generic": "Semaglutide",
+          "year": 2021,
+          "spend_cents": 262169434830,
+          "claims": 2016177,
+          "beneficiaries": 458643,
+          "weighted_unit_spend": 452.72044757,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Ozempic",
+          "generic": "Semaglutide",
+          "year": 2022,
+          "spend_cents": 462816064340,
+          "claims": 3410839,
+          "beneficiaries": 780253,
+          "weighted_unit_spend": 468.24204575,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Ozempic",
+          "generic": "Semaglutide",
+          "year": 2023,
+          "spend_cents": 919404843510,
+          "claims": 6927972,
+          "beneficiaries": 1464468,
+          "weighted_unit_spend": 355.90270351,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Ozempic",
+          "generic": "Semaglutide",
+          "year": 2024,
+          "spend_cents": 1297029634700,
+          "claims": 10417182,
+          "beneficiaries": 1952637,
+          "weighted_unit_spend": 306.47791837,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": 3776247911.9,
+        "claims_component": 4630498757.823397,
+        "average_spend_component": -854250845.9233963,
+        "claims_growth_pct": 50.36408923130752,
+        "average_spend_growth_pct": -6.179232013911284
+      }
+    },
+    {
+      "brand": "Rybelsus",
+      "generic": "Semaglutide",
+      "history": [
+        {
+          "brand": "Rybelsus",
+          "generic": "Semaglutide",
+          "year": 2020,
+          "spend_cents": 7344440861,
+          "claims": 68091,
+          "beneficiaries": 27825,
+          "weighted_unit_spend": 27.042868521,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Rybelsus",
+          "generic": "Semaglutide",
+          "year": 2021,
+          "spend_cents": 45456382329,
+          "claims": 367858,
+          "beneficiaries": 108224,
+          "weighted_unit_spend": 28.728823713,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Rybelsus",
+          "generic": "Semaglutide",
+          "year": 2022,
+          "spend_cents": 97489447013,
+          "claims": 686346,
+          "beneficiaries": 184615,
+          "weighted_unit_spend": 30.853757195,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Rybelsus",
+          "generic": "Semaglutide",
+          "year": 2023,
+          "spend_cents": 166590694330,
+          "claims": 1075026,
+          "beneficiaries": 285693,
+          "weighted_unit_spend": 32.413538758,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Rybelsus",
+          "generic": "Semaglutide",
+          "year": 2024,
+          "spend_cents": 189008202600,
+          "claims": 1251733,
+          "beneficiaries": 309993,
+          "weighted_unit_spend": 30.593366014,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": 224175082.7,
+        "claims_component": 273832835.88463265,
+        "average_spend_component": -49657753.18463265,
+        "claims_growth_pct": 16.437462907873854,
+        "average_spend_growth_pct": -2.560021386245233
+      }
+    },
+    {
+      "brand": "Trulicity",
+      "generic": "Dulaglutide",
+      "history": [
+        {
+          "brand": "Trulicity",
+          "generic": "Dulaglutide",
+          "year": 2020,
+          "spend_cents": 328487306190,
+          "claims": 2823185,
+          "beneficiaries": 497327,
+          "weighted_unit_spend": 400.68233332,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Trulicity",
+          "generic": "Dulaglutide",
+          "year": 2021,
+          "spend_cents": 470217472360,
+          "claims": 3704201,
+          "beneficiaries": 663858,
+          "weighted_unit_spend": 432.42763561,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Trulicity",
+          "generic": "Dulaglutide",
+          "year": 2022,
+          "spend_cents": 622529166760,
+          "claims": 4610823,
+          "beneficiaries": 840163,
+          "weighted_unit_spend": 459.0083713,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Trulicity",
+          "generic": "Dulaglutide",
+          "year": 2023,
+          "spend_cents": 736385622430,
+          "claims": 5316020,
+          "beneficiaries": 938731,
+          "weighted_unit_spend": 483.20525328,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Trulicity",
+          "generic": "Dulaglutide",
+          "year": 2024,
+          "spend_cents": 545413472510,
+          "claims": 4305141,
+          "beneficiaries": 788716,
+          "weighted_unit_spend": 467.74913984,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": -1909721499.2,
+        "claims_component": -1400289618.2038743,
+        "average_spend_component": -509431880.99612576,
+        "claims_growth_pct": -19.015711001839723,
+        "average_spend_growth_pct": -8.542402804311267
+      }
+    },
+    {
+      "brand": "Victoza 2-Pak",
+      "generic": "Liraglutide",
+      "history": [
+        {
+          "brand": "Victoza 2-Pak",
+          "generic": "Liraglutide",
+          "year": 2020,
+          "spend_cents": 34947615875,
+          "claims": 400626,
+          "beneficiaries": 101652,
+          "weighted_unit_spend": 109.14978347,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 2-Pak",
+          "generic": "Liraglutide",
+          "year": 2021,
+          "spend_cents": 33489795737,
+          "claims": 349866,
+          "beneficiaries": 91602,
+          "weighted_unit_spend": 115.93722782,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 2-Pak",
+          "generic": "Liraglutide",
+          "year": 2022,
+          "spend_cents": 31920550929,
+          "claims": 308357,
+          "beneficiaries": 82777,
+          "weighted_unit_spend": 122.14309731,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 2-Pak",
+          "generic": "Liraglutide",
+          "year": 2023,
+          "spend_cents": 31721356547,
+          "claims": 293462,
+          "beneficiaries": 83777,
+          "weighted_unit_spend": 126.64461904,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 2-Pak",
+          "generic": "Liraglutide",
+          "year": 2024,
+          "spend_cents": 7783272114,
+          "claims": 108521,
+          "beneficiaries": 41126,
+          "weighted_unit_spend": 91.446444828,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": -239380844.33,
+        "claims_component": -199909337.5346289,
+        "average_spend_component": -39471506.795371085,
+        "claims_growth_pct": -63.0204251317036,
+        "average_spend_growth_pct": -33.64883558768058
+      }
+    },
+    {
+      "brand": "Victoza 3-Pak",
+      "generic": "Liraglutide",
+      "history": [
+        {
+          "brand": "Victoza 3-Pak",
+          "generic": "Liraglutide",
+          "year": 2020,
+          "spend_cents": 154581541480,
+          "claims": 1040550,
+          "beneficiaries": 224779,
+          "weighted_unit_spend": 107.76552488,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 3-Pak",
+          "generic": "Liraglutide",
+          "year": 2021,
+          "spend_cents": 142229258310,
+          "claims": 884941,
+          "beneficiaries": 200512,
+          "weighted_unit_spend": 114.76558522,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 3-Pak",
+          "generic": "Liraglutide",
+          "year": 2022,
+          "spend_cents": 123859487240,
+          "claims": 724049,
+          "beneficiaries": 167181,
+          "weighted_unit_spend": 121.5396526,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 3-Pak",
+          "generic": "Liraglutide",
+          "year": 2023,
+          "spend_cents": 100463514520,
+          "claims": 574218,
+          "beneficiaries": 142213,
+          "weighted_unit_spend": 126.95461794,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Victoza 3-Pak",
+          "generic": "Liraglutide",
+          "year": 2024,
+          "spend_cents": 20306305037,
+          "claims": 181068,
+          "beneficiaries": 62754,
+          "weighted_unit_spend": 86.206557743,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": -801572094.83,
+        "claims_component": -687843828.1896074,
+        "average_spend_component": -113728266.64039257,
+        "claims_growth_pct": -68.46702820183275,
+        "average_spend_growth_pct": -35.90005802989279
+      }
+    },
+    {
+      "brand": "Wegovy",
+      "generic": "Semaglutide",
+      "history": [
+        {
+          "brand": "Wegovy",
+          "generic": "Semaglutide",
+          "year": 2023,
+          "spend_cents": 19977359,
+          "claims": 142,
+          "beneficiaries": 47,
+          "weighted_unit_spend": 496.25109967,
+          "unit_outlier": 1,
+          "selected_incretin": 1
+        },
+        {
+          "brand": "Wegovy",
+          "generic": "Semaglutide",
+          "year": 2024,
+          "spend_cents": 30128329140,
+          "claims": 211575,
+          "beneficiaries": 52961,
+          "weighted_unit_spend": 602.08996153,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": {
+        "change": 301083517.81,
+        "claims_component": 297455841.22866195,
+        "average_spend_component": 3627676.581338028,
+        "claims_growth_pct": 148896.47887323942,
+        "average_spend_growth_pct": 1.2187495886976916
+      }
+    },
+    {
+      "brand": "Zepbound",
+      "generic": "Tirzepatide",
+      "history": [
+        {
+          "brand": "Zepbound",
+          "generic": "Tirzepatide",
+          "year": 2024,
+          "spend_cents": 38734345,
+          "claims": 353,
+          "beneficiaries": 245,
+          "weighted_unit_spend": 509.13009512,
+          "unit_outlier": 0,
+          "selected_incretin": 1
+        }
+      ],
+      "bridge": null
+    }
+  ],
+  "quality": {
+    "source_rows": 14536,
+    "overall_products": 3625,
+    "manufacturer_detail_rows": 10911,
+    "unavailable_product_years": {
+      "2020": 738,
+      "2021": 571,
+      "2022": 404,
+      "2023": 220,
+      "2024": 0
+    },
+    "checks": {
+      "overall_keys_unique": true,
+      "source_rows_partition": true,
+      "historical_coverage_reconciles": true,
+      "annual_spend_reconciles": true,
+      "selected_cohort_is_subset": true,
+      "bridges_reconcile": true
+    }
+  }
+}
