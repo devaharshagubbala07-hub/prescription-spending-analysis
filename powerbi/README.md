@@ -6,7 +6,7 @@ A native Power BI Desktop project using the same public CMS release as the Pytho
 
 ## Open the report
 
-1. Download the [Power BI package](https://raw.githubusercontent.com/devaharshagubbala07-hub/prescription-spending-analysis/main/downloads/PrescriptionSpending_PowerBI.zip) and extract the whole ZIP to a short local folder, such as `C:\Portfolio`. Alternatively, on the [repository home page](https://github.com/devaharshagubbala07-hub/prescription-spending-analysis), choose **Code → Download ZIP**. Keep the report and semantic-model folders together.
+1. Download the [Power BI package (v2)](https://raw.githubusercontent.com/devaharshagubbala07-hub/prescription-spending-analysis/main/downloads/PrescriptionSpending_PowerBI_v2.zip) and extract the whole ZIP to a short local folder, such as `C:\Portfolio-v2`. Alternatively, on the [repository home page](https://github.com/devaharshagubbala07-hub/prescription-spending-analysis), choose **Code → Download ZIP**. Keep the report and semantic-model folders together.
 2. Use a current version of **Power BI Desktop**. Under **File → Options and settings → Options → Preview features**, enable **Power BI Project (.pbip) save option** and **Store reports using enhanced metadata format (PBIR)** if those options are present and not already enabled. Restart Desktop if prompted. This project uses a TMSL model; it does not require enabling TMDL authoring.
 3. Open **`powerbi/PrescriptionSpending.pbip`**. You can also use **File → Open → Browse** and select that file. Do not open only one copied JSON file.
 4. Select **Home → Refresh**. The report imports the pinned 5.3 MB CSV directly from `https://data.cms.gov`. If a source-credentials prompt appears, choose **Anonymous** for that public CMS source; if asked for the privacy level, choose **Public**. No personal file path or API key is required. Blank cards before the first refresh are expected because the project has no cached data.
@@ -16,6 +16,12 @@ A native Power BI Desktop project using the same public CMS release as the Pytho
 8. Save the project. If you want a single-file copy, use **File → Save As** and choose **Power BI Desktop file (.pbix)**. Creating that PBIX and capturing authentic report screenshots are Desktop steps.
 
 If Desktop reports a file, formula, or refresh error, preserve the exact message and filename. Do not present the report as validated until the relevant check succeeds. The existing web dashboard continues to work independently of this Power BI project.
+
+### If the earlier download opened with no page tabs
+
+The v2 package corrects the PBIR content version, fixes a slicer text-size property, and includes report item metadata. On September 26, 2026, Microsoft's `@microsoft/powerbi-report-authoring-cli` v0.4.0 validated the report files with **zero errors and zero warnings**. The package contains three pages and 40 native visuals. File validation does not establish successful Desktop rendering or DAX execution.
+
+Close the earlier project and extract v2 into a **new folder**, preserving the original copy. Open the new `powerbi/PrescriptionSpending.pbip` directly instead of choosing the old project from Recent. The three report tabs and static headings should appear before refresh; blank numeric cards before importing data are different from having no report pages. Then select **Home → Refresh**. If the new copy still has no tabs, capture the screen and the Desktop version from **Help → About** so the remaining compatibility issue can be investigated.
 
 ## Report design
 

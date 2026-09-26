@@ -300,7 +300,7 @@
       "items": [
         {
           "properties": {
-            "fontSize": {
+            "textSize": {
               "expr": {
                 "Literal": {
                   "Value": "11D"

@@ -13,6 +13,7 @@ MODEL = ROOT / 'PrescriptionSpending.SemanticModel'
 BASE = 'https://developer.microsoft.com/json-schemas/'
 SCHEMAS = {
  'pbip': BASE+'fabric/pbip/pbipProperties/1.0.0/schema.json',
+ 'platform': BASE+'fabric/gitIntegration/platformProperties/2.0.0/schema.json',
  'pbism': BASE+'fabric/item/semanticModel/definitionProperties/1.0.0/schema.json',
  'pbir': BASE+'fabric/item/report/definitionProperties/2.0.0/schema.json',
  'report': BASE+'fabric/item/report/definition/report/1.0.0/schema.json',
@@ -115,7 +116,7 @@ def slicer(page,name,table,column,selected,x,y,w):
       'Values':[[{'Literal':{'Value':(str(selected)+'L') if isinstance(selected,int) else "'"+selected.replace("'","''")+"'"}}]]}}}]}
     save_visual(page,name,'slicer',x,y,w,100,query={'queryState':{'Values':role(projection(table,column))}},
       objects={'data':obj(mode=lit('Dropdown')),'selection':obj(singleSelect=lit(True),selectAllCheckboxEnabled=lit(False)),
-               'general':obj(filter={'filter':selection}),'header':obj(show=lit(False)),'items':obj(fontSize=lit(11),fontColor=color(NAVY))},title=column)
+               'general':obj(filter={'filter':selection}),'header':obj(show=lit(False)),'items':obj(textSize=lit(11),fontColor=color(NAVY))},title=column)
     return name
 
 def bar_chart(page,name,title,category,metric,x,y,w,h,horizontal=False,sort_measure=False):
@@ -143,8 +144,10 @@ def footer(page):
 
 def build_report():
     write(ROOT/'PrescriptionSpending.pbip',{'$schema':SCHEMAS['pbip'],'version':'1.0','artifacts':[{'report':{'path':'PrescriptionSpending.Report'}}],'settings':{'enableAutoRecovery':True}})
+    write(REPORT/'.platform',{'$schema':SCHEMAS['platform'],'metadata':{'type':'Report','displayName':'PrescriptionSpending'},'config':{'version':'2.0','logicalId':tag('report')}})
     write(REPORT/'definition.pbir',{'$schema':SCHEMAS['pbir'],'version':'4.0','datasetReference':{'byPath':{'path':'../PrescriptionSpending.SemanticModel'}}})
-    write(REPORT/'definition/version.json',{'$schema':SCHEMAS['version'],'version':'4.0.0'})
+    # PBIR content version is separate from definition.pbir's binding version.
+    write(REPORT/'definition/version.json',{'$schema':SCHEMAS['version'],'version':'2.0.0'})
     write(REPORT/'definition/report.json',{'$schema':SCHEMAS['report'],'layoutOptimization':'None',
       'themeCollection':{'baseTheme':{'name':'CY23SU04','reportVersionAtImport':'5.43','type':'SharedResources'}},
       'resourcePackages':[{'name':'SharedResources','type':'SharedResources','items':[{'name':'CY23SU04','path':'BaseThemes/CY23SU04.json','type':'BaseTheme'}]}],
