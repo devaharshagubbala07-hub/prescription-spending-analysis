@@ -1,6 +1,6 @@
 # Explain the analysis
 
-This new portfolio project was built with AI assistance. Reproduce it, inspect the queries, and make a change you can explain before presenting it as evidence of your own understanding.
+This walkthrough explains the AI-assisted public-data analysis, its SQL choices, and the limits of the findings. The commands in the README reproduce the outputs.
 
 1. **Start with the question.** Which products concentrate spending, and why did a selected product's gross spending change?
 2. **State what the data represents.** CMS release June 2026; observations through 2024; Medicare Part D; gross spending before rebates.

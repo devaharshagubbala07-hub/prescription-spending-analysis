@@ -1,4 +1,4 @@
-# Prescription spending in Power BI
+# Prescription spending in Power BI — work in progress
 
 A native Power BI Desktop project using the same public CMS release as the Python/SQL analysis. Three report pages cover spending concentration, annual growth and its arithmetic components, and definitions with source checks. Developed with AI assistance.
 
